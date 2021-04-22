@@ -1,0 +1,340 @@
+.footer {
+  background: linear-gradient(233.51deg, rgba(169, 232, 106, 0.3) -16.59%, rgba(83, 191, 80, 0.3) 100%);
+}
+
+.footer__wrapper {
+  &--top {
+    padding-top: 40px;
+    padding-bottom: 38px;
+    position: relative;
+
+    @media screen and (max-width: @768) {
+      padding-top: 31px;
+      padding-bottom: 21px;
+    }
+
+    @media screen and (max-width: @576) {
+      padding-top: 52px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #61C000;
+      opacity: 0.4;
+      transform: matrix(1, 0, 0, -1, 0, 0);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @media screen and (max-width: @576) {
+        display: none;
+      }
+    }
+
+    .footer__wrapper-inner {
+      display: flex;
+      position: relative;
+
+      @media screen and (max-width: @768) {
+        flex-wrap: wrap;
+      }
+
+      .footer__box {
+        margin-right: auto;
+
+        &:nth-child(1) {
+          margin-right: 14%;
+
+          @media screen and (max-width: @768) {
+            display: flex;
+            width: 100%;
+          }
+
+          @media screen and (max-width: @576) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 266px;
+            margin-bottom: 15px;
+          }
+        }
+
+        &:nth-child(2) {
+          margin-right: 13.6%;
+
+          @media screen and (max-width: @768) {
+            margin-right: 29%;
+          }
+
+          @media screen and (max-width: @576) {
+            margin-right: 0;
+            margin-left: -16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 17px;
+            position: relative;
+            width: 100vw;
+
+            &::after {
+              content: "";
+              height: 1px;
+              width: calc(100vw + 16px);
+              background: #61C000;
+              opacity: 0.3;
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: -16px;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          @media screen and (max-width: @576) {
+            margin-right: 0;
+            margin-left: -16px;
+            padding-top: 20px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 9px;
+            position: relative;
+            width: 100vw;
+
+            &::after {
+              content: "";
+              height: 1px;
+              width: calc(100vw + 16px);
+              background: #61C000;
+              opacity: 0.3;
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: -16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--bottom {
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media screen and (max-width: @768) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .footer__wrapper-inner {
+      color: @dark-green;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 17px;
+
+      @media screen and (max-width: @768) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .footer__terms-use,
+      .footer__privacy-policy {
+        text-decoration: underline;
+        color: inherit;
+        margin-right: 11px;
+
+        @media screen and (max-width: @576) {
+          margin-bottom: 8px;
+        }
+      }
+
+      .footer__protection-rights {
+        @media screen and (max-width: @768) {
+          margin-top: 11px;
+        }
+
+        @media screen and (max-width: @576) {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}
+
+.footer__logo-wrapper {
+  display: flex;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: @768) {
+    margin-right: 15%;
+  }
+
+  @media screen and (max-width: @576) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .footer__logo {
+    padding-right: 14px;
+    width: 99px;
+    height: 85px;
+    display: block;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .footer__slogan {
+    padding-left: 12px;
+    padding-top: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    color: @dark-green;
+    height: 85px;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: #61C000;
+      opacity: 0.4;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.footer__contacts {
+  margin-top: 22px;
+
+  @media screen and (max-width: @576) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+}
+
+.footer__tel {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: @576) {
+    margin-left: 0;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+  .footer__tel-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: @dark;
+  }
+}
+
+.footer__email {
+  text-align: right;
+  width: 67%;
+
+
+  @media screen and (max-width: @768) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: @576) {
+    width: 67%;
+  }
+
+  .footer__email-link {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    color: @dark;
+  }
+}
+
+.footer__title {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 31px;
+  color: @dark;
+  margin-bottom: 12px;
+
+  @media screen and (max-width: @576) {
+    position: relative;
+    width: 100%;
+
+    &--active {
+      .footer__title-arrow {
+        transform: rotate(180deg) !important;
+      }
+    }
+  }
+
+  .footer__title-arrow {
+    display: none;
+
+    @media screen and (max-width: @576) {
+      display: block;
+      fill: @light-green;
+      position: absolute;
+      top: 12px;
+      right: -16px;
+      transform: rotate(0deg);
+      transition: all ease-in 0.2s;
+    }
+  }
+}
+
+.footer__list {
+  @media screen and (max-width: @576) {
+    display: none;
+  }
+
+  .footer__item {
+    .footer__link {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      color: @dark;
+    }
+  }
+}
+
+.footer__inst {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/btn-inst.png");
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -40px;
+  right: 20px;
+
+  @media screen and (max-width: @768) {
+    top: -30px;
+    right: 45px;
+  }
+
+  @media screen and (max-width: @576) {
+    top: -52px;
+    right: 15px;
+  }
+}

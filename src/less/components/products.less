@@ -1,0 +1,230 @@
+.products {
+  padding-top: 80px;
+  padding-bottom: 30px;
+  position: relative;
+  background: url("../img/leaf-big.png") right 80% no-repeat;
+
+  @media screen and (max-width: @1024) {
+    padding-top: 100px;
+  }
+
+  @media screen and (max-width: @576) {
+    padding-top: 68px;
+  }
+}
+
+.products__title {
+  .line-bottom-left();
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 43px;
+  margin-bottom: 40px;
+  color: @dark;
+
+  @media screen and (max-width: @1024) {
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: @576) {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+}
+
+.products__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: @1280) {
+    justify-content: space-around;
+  }
+
+  @media screen and (max-width: @1024) {
+    justify-content: flex-start;
+  }
+}
+
+.products__item {
+  width: 410px;
+  min-height: 332px;
+  background-color: @white;
+  padding-top: 30px;
+  padding-left: 49px;
+  padding-right: 49px;
+  padding-bottom: 50px;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.2s;
+  position: relative;
+  z-index: 2;
+
+  @media screen and (max-width: @1280) {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  @media screen and (max-width: @1024) {
+    width: 328px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+
+    .product__item-title {
+      color: @light-green;
+    }
+
+    .products__sub-item {
+      color: @dark;
+
+      &::after {
+        content: "";
+        background-color: @light-green;
+      }
+    }
+
+    .btn__wrapper {
+      transition: all ease 0.2s;
+      background-color: transparent;
+    }
+
+    span {
+      color: @white;
+    }
+  }
+
+  &:nth-child(3n) {
+    margin-right: 0;
+
+    @media screen and (max-width: @1280) {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+    @media screen and (max-width: @1024) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(2n) {
+    margin-left: auto;
+  }
+
+  &--meat {
+    background: url("../img/products-item-meat.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-meat-mobi.png") right bottom no-repeat @white;
+    }
+  }
+
+  &--milk {
+    background: url("../img/products-item-milk.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-milk-mobi.png") right bottom no-repeat @white;
+    }
+  }
+
+  &--fish {
+    background: url("../img/products-item-fish.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-fish-mobi.png") right bottom no-repeat @white;
+    }
+  }
+
+  &--fruits {
+    background: url("../img/products-item-fruits.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-fruits-mobi.png") right bottom no-repeat @white;
+    }
+  }
+
+  &--grocery {
+    background: url("../img/products-item-grocery.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-grocery-mobi.png") right bottom no-repeat @white;
+    }
+  }
+
+  &--bread {
+    background: url("../img/products-item-bread.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-bread-mobi.png") right bottom no-repeat @white;
+    }
+  }
+
+  &--fresh {
+    background: url("../img/products-item-fresh.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-fresh-mobi.png") right bottom no-repeat @white;
+    }
+  }
+
+  &--candys {
+    background: url("../img/products-item-candys.png") right bottom no-repeat @white;
+
+    @media screen and (max-width: @576) {
+      background: url("../img/products-item-candys-mobi.png") right bottom no-repeat @white;
+    }
+  }
+}
+
+.product__item-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 20px;
+  max-width: 150px;
+  color: @dark;
+}
+
+.products__sub-list {
+  margin-bottom: auto;
+  max-width: 158px;
+
+  .products__sub-item {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    padding-left: 13px;
+    color: #575757;
+    position: relative;
+    margin-bottom: 10px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #575757;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.products__item-btn {
+  max-width: 154px;
+  text-align: center;
+}

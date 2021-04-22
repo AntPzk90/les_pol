@@ -1,0 +1,46 @@
+.column-content {
+  columns: 2;
+  column-gap: 36px;
+
+  @media screen and (max-width: @1024) {
+    column-gap: 20px;
+  }
+
+  p {
+    margin-bottom: 30px;
+
+    @media screen and (max-width: @1024) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    b {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 34px;
+
+      @media screen and (max-width: @1024) {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      @media screen and (max-width: @576) {
+        margin-bottom: 12px;
+      }
+    }
+
+    a {
+      display: block;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      text-decoration: underline;
+      color: @dark-green;
+      margin: 20px 0;
+    }
+  }
+}

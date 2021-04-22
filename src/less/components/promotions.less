@@ -1,0 +1,157 @@
+.promotions {
+  padding-top: 45px;
+  padding-bottom: 40px;
+  background-color: @bg-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 350px;
+    height: 356px;
+    position: absolute;
+    left: 30px;
+    top: -20px;
+    background:
+      url("../img/leaf-1.png") bottom right / 350px 356px no-repeat;
+
+    @media screen and (max-width: @1024) {
+      width: 200px;
+      height: 200px;
+      left: -50px;
+      background:
+        url("../img/leaf-big.png") bottom right / 200px 200px no-repeat;
+    }
+
+    @media screen and (max-width: @576) {
+      display: none;
+    }
+  }
+}
+
+.promotions__wrapper {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (max-width: @1024) {
+    padding-left: 46px;
+    padding-right: 46px;
+  }
+
+  @media screen and (max-width: @576) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.promotions__title {
+  .line-bottom-left();
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 43px;
+  margin-bottom: 20px;
+  color: @dark;
+
+  @media screen and (max-width: @1024) {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: @576) {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 20px;
+
+    &::before {
+      transform: translateX(-38px);
+    }
+  }
+}
+
+.promotions__wrapper-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media screen and (max-width: @1024) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media screen and (max-width: @576) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.promotions__btns {
+  .slick-arrow {
+    .btn-reset();
+    background: linear-gradient(180deg, #7CB844 0%, #43A14A 100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background-color: @white;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+
+  .slick-prev {
+    margin-right: 30px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background-image: url("../img/arrow-right-dark-green.svg");
+      background-size: 12px 12px;
+      background-position: 17px 17px;
+      background-repeat: no-repeat;
+      z-index: 2;
+      transform: rotate(180deg);
+      cursor: pointer;
+    }
+  }
+
+  .slick-next {
+    &::before {
+      content: "";
+      display: block;
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background-image: url("../img/arrow-right-dark-green.svg");
+      background-size: 12px 12px;
+      background-position: 17px 17px;
+      background-repeat: no-repeat;
+      z-index: 2;
+      cursor: pointer;
+    }
+  }
+}
