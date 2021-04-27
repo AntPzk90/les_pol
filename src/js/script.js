@@ -32,9 +32,17 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
   });
   $(".header__menu-btn").click(function () {
     $(".header__vertical-menu").css("transform", "translateX(0)");
+    $("body").append('<div class="overlay"></div>').css({ overflow: "hidden" });
+    $(".overlay").click(function () {
+      this.remove();
+      $(".header__vertical-menu").css("transform", "translateX(100%)");
+      $("body").removeAttr("style");
+    });
   });
   $(".header__btn-close").click(function () {
     $(".header__vertical-menu").removeAttr("style");
+    $(".overlay").remove();
+    $("body").removeAttr("style");
   });
 } else {
   $(".header__menu-btn").click(function () {
@@ -124,3 +132,59 @@ $(".promotions__btns .slick-next").click(function () {
 $(".promotions__btns .slick-prev").click(function () {
   $(".promotions__slider.slider--board").slick("slickPrev");
 });
+
+$(".board__filters-dropdown-btn").click(function () {
+  $(this).toggleClass("board__filters-dropdown-btn--active");
+  $(this).next().slideToggle(200);
+});
+
+$(".card__btn").click(function (evt) {
+  evt.preventDefault();
+  $(this).fadeOut(0);
+  $(this)
+    .parent()
+    .find(".card__counter")
+    .fadeIn("200")
+    .css({ display: "flex" });
+});
+
+if (window.matchMedia("(max-width: 576px)").matches) {
+  $(".board__btn-show-filters").click(function () {
+    $(".board__filters").css("transform", "translate(0, 70px)");
+  });
+
+  $(".board__filters-close-btn").click(function () {
+    $(".board__filters").removeAttr("style");
+  });
+
+  $(document).ready(function () {
+    $(".board__sort-select").select2({
+      placeholder: "По названию",
+      minimumResultsForSearch: -1,
+    });
+  });
+} else if (window.matchMedia("(max-width: 1024px)").matches) {
+  $(".board__btn-show-filters").click(function () {
+    $("body").append('<div class="overlay"></div>').css({ overflow: "hidden" });
+    $(".overlay").click(function () {
+      this.remove();
+      $(".board__filters").css("transform", "translateX(100%)");
+      $("body").removeAttr("style");
+      $(".board__filters").removeAttr("style");
+    });
+    $(".board__filters").css("transform", "translate(0, 0)");
+  });
+
+  $(".board__filters-close-btn").click(function () {
+    $(this).parent().removeAttr("style");
+    $(".overlay").remove();
+    $("body").removeAttr("style");
+  });
+
+  $(document).ready(function () {
+    $(".board__sort-select").select2({
+      placeholder: "По названию",
+      minimumResultsForSearch: -1,
+    });
+  });
+}

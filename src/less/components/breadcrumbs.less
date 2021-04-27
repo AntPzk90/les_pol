@@ -1,0 +1,49 @@
+.breadcrumbs {
+  margin-bottom: 20px;
+
+  .breadcrumbs__list {
+    display: flex;
+
+    .breadcrumbs__item {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 20px;
+      color: @dark-green;
+      margin-right: 10px;
+
+      @media screen and (max-width: @576) {
+        display: none;
+
+        &:first-child {
+          display: block;
+        }
+
+        &:last-child {
+          display: block;
+
+          &::before {
+            content: "/ ... / \2002";
+            color: #888888;
+          }
+        }
+      }
+
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    .breadcrumbs__link {
+      color: #888888;
+      text-decoration: none;
+
+      &::after {
+        content: " /";
+
+        @media screen and (max-width: @576) {
+          content: "";
+        }
+      }
+    }
+  }
+}
